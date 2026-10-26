@@ -34,6 +34,14 @@ class RepositorioAcademico:
                 return usuario
         return None
 
+    def autenticar_usuario(self, usuario_id, contrasena):
+        """Devuelve el usuario autenticado o ``None`` cuando los datos no son válidos."""
+        usuario = self.buscar_usuario(usuario_id)
+
+        if usuario and usuario.autenticar(contrasena):
+            return usuario
+        return None
+
     def registrar_curso(self, curso):
         if self.buscar_curso(curso.codigo):
             return False

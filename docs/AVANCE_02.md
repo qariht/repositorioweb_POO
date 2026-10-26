@@ -1,8 +1,8 @@
-# Avance 01 - Modelo orientado a objetos
+# Avance 02 - Gestión interactiva por consola
 
 ## Propósito
 
-Entregar una base ejecutable y verificable del Repositorio Web Académico antes de incorporar persistencia, interfaz web y funcionalidades avanzadas.
+Entregar una aplicación de consola ejecutable y verificable del Repositorio Web Académico antes de incorporar persistencia, interfaz web y funcionalidades avanzadas.
 
 ## Conceptos aplicados
 
@@ -24,6 +24,7 @@ Entregar una base ejecutable y verificable del Repositorio Web Académico antes 
 5. Validar extensiones `.py`, `.tex`, `.pdf` y `.zip` y el límite de 20 MB.
 6. Buscar recursos publicados por texto o código de curso.
 7. Bloquear usuarios desde un administrador.
+8. Usar menús distintos para estudiante y administrador después del inicio de sesión.
 
 ## Límites intencionales
 

@@ -18,6 +18,13 @@ class PruebasDeUsuarios(unittest.TestCase):
         self.assertTrue(self.estudiante.autenticar("secreta"))
         self.assertFalse(self.estudiante.autenticar("incorrecta"))
 
+    def test_repositorio_autentica_usuario_registrado(self):
+        repositorio = RepositorioAcademico("Repositorio de prueba")
+        repositorio.registrar_usuario(self.estudiante)
+
+        self.assertIs(repositorio.autenticar_usuario("U001", "secreta"), self.estudiante)
+        self.assertIsNone(repositorio.autenticar_usuario("U001", "incorrecta"))
+
     def test_administrador_puede_bloquear_usuario(self):
         administrador = Administrador("A001", "ADM01", "admin@unsch.edu.pe", "clave")
         administrador.bloquear_usuario(self.estudiante)
@@ -62,6 +69,13 @@ class PruebasDeRecursos(unittest.TestCase):
     def test_no_registra_correo_externo(self):
         externo = Estudiante("U002", "20251002", "externo@gmail.com", "clave", 4)
         self.assertFalse(self.repositorio.registrar_usuario(externo))
+
+    def test_busca_recursos_por_curso(self):
+        recurso = self.crear_recurso("poo.pdf")
+        self.repositorio.publicar_recurso(recurso)
+
+        self.assertEqual(self.repositorio.buscar_recursos(codigo_curso="IS-282"), [recurso])
+        self.assertEqual(self.repositorio.buscar_recursos(codigo_curso="IS-999"), [])
 
 
 if __name__ == "__main__":

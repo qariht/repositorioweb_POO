@@ -12,6 +12,7 @@ Esta primera entrega es una aplicación de consola enfocada en los temas vistos 
 - Sobrescritura: cada tipo de usuario informa su propio rol.
 - Reglas iniciales: correo institucional, usuarios activos, formatos permitidos y límite de 20 MB.
 - Publicación y búsqueda básica de recursos en memoria.
+- Menú interactivo de consola con registro, inicio de sesión y opciones según el rol.
 
 No incluye todavía una interfaz web, base de datos, carga física de archivos, calificaciones ni moderación completa. Esas funciones se implementarán en las siguientes etapas del curso.
 
@@ -38,6 +39,15 @@ Desde la carpeta raíz del proyecto:
 ```bash
 python3 main.py
 ```
+
+Al iniciar, el sistema registra el curso `IS-282` y una cuenta administrativa de demostración:
+
+```text
+Identificador: ADM001
+Contraseña: clave-admin
+```
+
+Primero puede registrar un estudiante y después iniciar sesión con el identificador mostrado durante el registro.
 
 ## Pruebas
 
